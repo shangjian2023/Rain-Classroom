@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "雨课堂作业助手",
+  "version": "1.0.0",
+  "description": "自动统计雨课堂各课程作业并根据截止时间排序",
+  "permissions": [
+    "storage",
+    "cookies",
+    "alarms",
+    "notifications",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.yuketang.cn/*",
+    "https://*.changjiang.yuketang.cn/*",
+    "https://www.yuketang.cn/*",
+    "https://changjiang.yuketang.cn/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.yuketang.cn/*",
+        "https://*.changjiang.yuketang.cn/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.svg",
+      "48": "icons/icon48.svg",
+      "128": "icons/icon128.svg"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
+  }
+}
