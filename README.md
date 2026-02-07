@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <strong>📝 自动统计雨课堂各课程作业，智能排序，再也不怕错过DDL！</strong>
+  <strong>📝 自动统计雨课堂各课程作业，且智能排序，再也不怕错过DDL！</strong>
 </p>
 
 <p align="center">
