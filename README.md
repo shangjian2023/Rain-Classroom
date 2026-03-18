@@ -1,36 +1,40 @@
-# 雨课堂作业助手
+# ☔ 雨课堂作业截止日期查询插件
 
 <p align="center">
-  <img src="yuketang-deadline/icons/icon128.svg" width="80" height="80" alt="雨课堂作业助手图标">
+  <img src="https://raw.githubusercontent.com/shangjian2023/Rain-Classroom/main/yuketang-deadline/icons/icon128.svg" width="80" height="80" alt="雨课堂作业截止日期查询插件">
 </p>
 
 <p align="center">
-  <strong>📝 自动统计雨课堂各课程作业，且智能排序，再也不怕错过DDL！</strong>
+  <strong>🎯 一键查看雨课堂所有作业截止日期，再也不会错过DDL！</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Chrome-blue?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Chrome">
+  <img src="https://img.shields.io/badge/Platform-Edge-blue?style=for-the-badge&logo=microsoft-edge&logoColor=white" alt="Edge">
+  <img src="https://img.shields.io/badge/Manifest-V3-green?style=for-the-badge" alt="Manifest V3">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License">
 </p>
 
 <p align="center">
   <a href="#功能特点">功能特点</a> •
-  <a href="#安装方法">安装方法</a> •
-  <a href="#使用指南">使用指南</a> •
-  <a href="#技术架构">技术架构</a> •
-  <a href="#联系方式">联系方式</a>
+  <a href="#安装教程">安装教程</a> •
+  <a href="#使用说明">使用说明</a> •
+  <a href="#常见问题">常见问题</a>
 </p>
 
 ---
 
 ## 📖 项目简介
 
-**雨课堂作业助手**是一款专为使用雨课堂平台的学生设计的Edge浏览器扩展插件。它能够：
+**雨课堂作业截止日期查询插件**是一款专为使用雨课堂（清华大学教育技术）平台的学生设计的浏览器扩展。它可以帮助你：
 
-- 🔍 **自动抓取**所有课程的作业信息
-- ⏰ **按截止时间排序**，优先显示即将到期的作业
-- 🚨 **智能提醒**即将截止的作业（36小时内）
-- 📊 **分类统计**：全部、紧急、待完成、已完成
-- 🎯 **课程筛选**，快速查看特定课程的作业
+- 📅 **查看所有作业截止日期**：一次性列出所有课程的作业DDL
+- ⏰ **智能提醒**：桌面通知提醒即将到期的作业
+- 📊 **清晰展示**：表格形式展示，一目了然
+- 🔔 **持续监控**：自动刷新，保持最新状态
 
-> 💡 **为什么开发这个插件？**
-> 
-> 作为一名学生，我经常需要在雨课堂多个课程之间切换查看作业，很容易遗漏即将截止的作业。这个插件可以帮我一目了然地看到所有作业，按紧急程度排序，再也不怕错过DDL了！
+> 💡 **开发初衷**  
+> 雨课堂的作业系统需要逐个进入每个课程才能看到作业截止日期，非常麻烦。这个插件可以一键查看所有课程的DDL，帮你合理安排时间，避免错过作业提交！
 
 ---
 
@@ -38,223 +42,177 @@
 
 | 功能 | 描述 |
 |------|------|
-| 🔄 **自动同步** | 每30分钟自动刷新作业数据 |
-| 🔔 **截止提醒** | 桌面通知提醒36小时内截止的作业 |
-| 📅 **时间显示** | 智能格式化剩余时间（X天X小时后截止） |
-| 🏷️ **状态标签** | 待完成 / 补交中 / 已提交 / 已过期 |
-| 🎨 **美观界面** | 现代化UI设计，清晰易用 |
-| 💾 **本地缓存** | 离线也能查看上次同步的数据 |
+| 📋 **作业列表展示** | 汇总显示所有课程的作业信息 |
+| ⏰ **截止时间提醒** | 桌面弹窗通知即将到期的作业 |
+| 🔢 **倒计时显示** | 精确到分钟显示剩余时间 |
+| 🎨 **状态标识** | 绿色安全 / 黄色警告 / 红色紧急 |
+| 🔄 **自动刷新** | 保持作业状态实时更新 |
+| 🔐 **本地运行** | 数据不上传，保护隐私 |
+
+### 截止时间状态
+
+| 状态 | 条件 | 颜色 |
+|------|------|------|
+| 安全 | 剩余时间 > 24小时 | 绿色 |
+| 警告 | 剩余时间 < 24小时 | 黄色 |
+| 紧急 | 剩余时间 < 3小时 | 红色 |
 
 ---
 
-## 📥 安装方法
+## 🚀 安装教程
 
-### 方法一：开发者模式安装（推荐）
+### 方法一：开发者模式（推荐）
 
-1. **下载代码**
+1. **下载项目**
    ```bash
-   git clone https://github.com/yourusername/yuketang-deadline.git
+   git clone https://github.com/shangjian2023/Rain-Classroom.git
    ```
-   或者点击右上角 **Code → Download ZIP** 下载并解压
+   或点击 **Code → Download ZIP** 下载解压
 
-2. **打开Chrome扩展管理页面**
-   - 在地址栏输入：`chrome://extensions/`
-   - 或者点击 Chrome 菜单 → 更多工具 → 扩展程序
+2. **打开Chrome扩展管理页**
+   - 地址栏输入：`chrome://extensions/`
+   - 或菜单 → 更多工具 → 扩展程序
 
-3. **开启开发者模式**
-   - 在页面右上角打开 **"开发者模式"** 开关
+3. **启用开发者模式**
+   - 右上角开启 **开发者模式** 开关
 
 4. **加载扩展**
-   - 点击 **"加载已解压的扩展程序"**
-   - 选择 `yuketang-deadline` 文件夹
+   - 点击 **加载已解压的扩展程序**
+   - 选择解压后的 `yuketang-deadline` 文件夹
 
-5. **完成！**
-   - 浏览器工具栏会出现扩展图标
-   - 点击图标即可使用
+5. **固定扩展**
+   - 点击浏览器工具栏的拼图图标
+   - 将插件固定到工具栏，方便使用
 
-### 方法二：Chrome 应用商店（待上架）
+### 方法二：Chrome商店安装（即将上线）
 
-> 目前正在准备上架 Chrome Web Store，敬请期待！
-
----
-
-## 🚀 使用指南
-
-### 首次使用
-
-1. **点击扩展图标**打开插件
-2. **点击"打开雨课堂登录页面"**
-3. **使用微信扫码登录**雨课堂网页版
-4. **返回插件，点击"同步登录状态"**
-5. 开始查看你的作业列表！
-
-### 界面说明
-
-```
-┌─────────────────────────────────────┐
-│  🌧️ 雨课堂作业助手    ● 已登录       │  ← 标题栏和登录状态
-├─────────────────────────────────────┤
-│  [刷新] [全部课程 ▼] [退出]         │  ← 工具栏
-├─────────────────────────────────────┤
-│  全部  紧急  待完成  已完成          │  ← 统计筛选栏
-│   12     3     7       2            │
-├─────────────────────────────────────┤
-│  ┌───────────────────────────────┐  │
-│  │ 📄 第一次作业              待完成 │  ← 作业列表
-│  │ 🏷️ 高等数学    ⏰ 2天后截止      │
-│  └───────────────────────────────┘  │
-│  ┌───────────────────────────────┐  │
-│  │ 📄 期中测试                补交中 │
-│  │ 🏷️ 大学物理    ⏰ 5小时后截止    │  ← 紧急作业高亮
-│  └───────────────────────────────┘  │
-├─────────────────────────────────────┤
-│  数据来源: 雨课堂    更新于 14:30   │  ← 底部信息
-└─────────────────────────────────────┘
-```
-
-### 作业状态说明
-
-| 状态 | 含义 | 颜色 |
-|------|------|------|
-| 待完成 | 正常待提交的作业 | 蓝色 |
-| 补交中 | 已过期但允许补交 | 橙色 |
-| 已提交 | 已完成提交 | 绿色 |
-| 紧急 | 3天内截止的作业 | 红色高亮 |
+> 计划上架Chrome Web Store，敬请期待！
 
 ---
 
-## 🛠️ 技术架构
+## 📝 使用说明
 
-### 项目结构
+### 基本使用
+
+1. 登录 [雨课堂](https://www.yuketang.cn/)
+2. 点击浏览器工具栏的插件图标
+3. 等待加载完成，即可看到所有作业列表
+
+### 操作示意
+
+```
+┌─────────────────────────────────────────────────────┐
+│  📚 雨课堂作业列表              [刷新] [设置]      │
+├─────────────────────────────────────────────────────┤
+│  课程名称        作业名称        截止时间    状态   │
+├─────────────────────────────────────────────────────┤
+│  高等数学        习题三          03-15 14:30  ⚠️   │
+│  线性代数        第五章作业       03-16 23:59  ✅   │
+│  程序设计        实验报告         03-14 18:00  🔴   │
+│  ...            ...              ...          ...  │
+├─────────────────────────────────────────────────────┤
+│  📊 共有 12 项作业，其中 3 项即将截止             │
+│  下次刷新时间：14:30                               │
+└─────────────────────────────────────────────────────┘
+```
+
+### 桌面通知
+
+- 当有作业即将截止时，会弹出桌面通知
+- 可在设置中调整通知提醒时间
+
+---
+
+## 📁 项目结构
 
 ```
 yuketang-deadline/
-├── 📄 manifest.json      # 扩展配置文件（Manifest V3）
-├── 📄 background.js      # 后台服务脚本
-├── 📄 content.js         # 内容脚本（页面交互）
-├── 📄 popup.html         # 弹出窗口界面
-├── 📄 popup.js           # 弹出窗口逻辑
-├── 📄 styles.css         # 样式文件
-└── 📁 icons/             # 图标资源
-    ├── icon16.svg
-    ├── icon48.svg
-    └── icon128.svg
-```
-
-### 核心技术
-
-- **Manifest V3**: Chrome 扩展最新版本标准
-- **Chrome Storage API**: 本地数据存储
-- **Chrome Alarms API**: 定时任务（自动刷新）
-- **Chrome Notifications API**: 桌面通知
-- **Fetch API**: 与雨课堂服务器通信
-
-### 数据流
-
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│  雨课堂服务器  │ ←→ │ background  │ ←→ │  popup界面   │
-│  (yuketang)  │     │   脚本      │     │  (用户交互)  │
-└─────────────┘     └─────────────┘     └─────────────┘
-                           ↓
-                    ┌─────────────┐
-                    │ Chrome存储  │
-                    │ (本地缓存)  │
-                    └─────────────┘
+├── manifest.json          # 扩展配置文件（Manifest V3）
+├── background.js          # 后台服务脚本
+├── content.js             # 页面内容脚本
+├── popup.html             # 弹窗页面
+├── popup.js               # 弹窗交互逻辑
+├── styles.css             # 样式文件
+├── icons/                 # 扩展图标
+│   ├── icon16.svg
+│   ├── icon48.svg
+│   └── icon128.svg
+└── README.md
 ```
 
 ---
 
-## 🔒 隐私说明
+## 🔧 技术栈
 
-- ✅ 所有数据仅存储在**本地浏览器**中
-- ✅ 不会上传任何个人信息到第三方服务器
-- ✅ 仅访问雨课堂相关域名（`*.yuketang.cn`）
-- ✅ 代码完全开源，可自行审查
+| 技术 | 说明 |
+|------|------|
+| **Manifest V3** | Chrome扩展最新规范 |
+| **Chrome Storage API** | 本地数据存储 |
+| **Chrome Alarms API** | 定时任务调度 |
+| **Chrome Notifications API** | 桌面通知 |
+| **Fetch API** | 网络请求处理 |
 
 ---
 
-## 🐛 常见问题
+## ❓ 常见问题
 
-### Q: 同步登录状态失败怎么办？
-**A:** 请确保：
-1. 已在雨课堂网页版完成微信扫码登录
-2. 当前标签页处于雨课堂页面（`changjiang.yuketang.cn`）
-3. 尝试刷新页面（F5）后再点击同步
+### Q: 插件无法显示作业列表？
 
-### Q: 作业数据没有自动更新？
-**A:** 插件每30分钟自动刷新一次。如需立即更新，请点击工具栏的刷新按钮。
+**A:** 请检查以下几点：
+1. 确保已登录雨课堂账号（访问 `*.yuketang.cn` 域名）
+2. 刷新雨课堂页面后重试
+3. 检查浏览器控制台是否有错误信息
 
-### Q: 通知提醒不工作？
-**A:** 请检查浏览器通知权限：
-1. 打开 `chrome://settings/content/notifications`
-2. 确保允许该扩展发送通知
+### Q: 提示"无法获取课程数据"？
 
-### Q: 支持哪些雨课堂版本？
+**A:** 可能原因：
+1. 雨课堂服务器暂时不可用
+2. 账号登录状态过期，请重新登录
+3. 网络连接问题
+
+### Q: 支持哪些浏览器？
+
 **A:** 目前支持：
-- 长江雨课堂（`changjiang.yuketang.cn`）
-- 标准雨课堂（`yuketang.cn`）
+- Google Chrome（推荐）
+- Microsoft Edge（Chromium内核）
+- 其他Chromium内核浏览器
 
 ---
 
-## 📝 更新日志
+## 🔄 更新日志
 
-### v1.0.0 (2026--02--01)
-- ✨ 首次发布
-- 📝 自动抓取作业列表
-- ⏰ 截止时间排序
-- 🔔 紧急作业提醒
-- 📊 分类统计功能
+### v1.0.0 (2024-02-01)
+- 🎉 首次发布
+- ✨ 支持作业列表展示
+- 🔔 支持桌面通知提醒
+- 📊 支持截止时间状态标识
+- 🎨 优化界面样式
 
 ---
 
-##  参与贡献
+## 🤝 贡献指南
 
-这是一个开源项目，欢迎任何形式的贡献！
+欢迎提交 Issue 和 Pull Request！
 
-### 如何贡献
-
-1. **Fork** 本仓库
-2. 创建你的功能分支 (`git checkout -b feature/AmazingFeature`)
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
 3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开一个 **Pull Request**
+5. 提交 Pull Request
 
-### 贡献者
+---
 
-感谢所有为这个项目做出贡献的人！
+## 📄 许可证
+
+本项目采用 [MIT License](LICENSE) 开源协议。
 
 ---
 
 ## 📧 联系方式
 
-> 🌟 **我是GitHub新手，刚刚来到这个平台，欢迎大家的指正与交流！**
-
-如果你有任何问题、建议或想交流技术，欢迎联系我：
-
-📮 **邮箱**: [2045306963@qq.com](mailto:2045306963@qq.com)
-
----
-
-## 📄 开源协议
-
-本项目基于 [MIT License](LICENSE) 开源。
-
-```
-MIT License
-
-Copyright (c) 2024 雨课堂作业助手
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-```
+如有问题或建议，欢迎：
+- 提交 [Issue](https://github.com/shangjian2023/Rain-Classroom/issues)
+- 发送邮件至：2045306963@qq.com
 
 ---
 
@@ -263,5 +221,5 @@ copies or substantial portions of the Software.
 </p>
 
 <p align="center">
-  ⭐ 如果这个项目对你有帮助，请给个 Star 支持一下！
+  ⭐ 如果这个项目对你有帮助，请给一个 Star！
 </p>
